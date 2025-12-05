@@ -1,0 +1,23 @@
+{
+  "name": "efood-table-mock-api",
+  "version": "1.0.0",
+  "description": "Free Mock API Server for eFood Table Waiter App Testing",
+  "main": "server.js",
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["mock", "api", "efood", "testing"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "body-parser": "^1.20.2"
+  }
+}
+

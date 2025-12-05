@@ -1,0 +1,62 @@
+========================================
+  DEPLOYMENT COMMANDS - COPY & PASTE
+========================================
+
+STEP 1: Create GitHub Repository
+---------------------------------
+1. Go to: https://github.com/new
+2. Repository name: efood-table-api
+3. Make it PUBLIC ✅
+4. Click "Create repository"
+5. Copy the repository URL (you'll need it below)
+
+STEP 2: Push to GitHub
+-----------------------
+Run these commands in the mock-api-server folder:
+
+git add .
+git commit -m "Initial commit - eFood Table API"
+git remote add origin https://github.com/YOUR_USERNAME/efood-table-api.git
+git push -u origin main
+
+⚠️ Replace YOUR_USERNAME with your GitHub username!
+
+STEP 3: Deploy to Render.com
+-----------------------------
+1. Go to: https://render.com
+2. Sign up with GitHub (free)
+3. Click "New +" → "Web Service"
+4. Connect your repository: efood-table-api
+5. Settings:
+   - Build Command: npm install
+   - Start Command: node server.js
+   - Plan: Free
+6. Click "Create Web Service"
+7. Wait 2-5 minutes
+8. Copy your URL: https://your-app.onrender.com
+
+STEP 4: Update Flutter App
+--------------------------
+Open: lib/util/app_constants.dart
+Change line 19 to:
+static const String baseUrl = 'https://your-app.onrender.com';
+
+⚠️ Use https:// (not http://)
+⚠️ Replace with YOUR actual Render URL
+
+STEP 5: Test
+------------
+1. Test API: https://your-app.onrender.com/api/v1/config/table
+2. Test Admin: https://your-app.onrender.com/admin.html
+3. Run Flutter app: flutter run
+
+========================================
+  OPTIONAL: Keep Server Alive
+========================================
+Use UptimeRobot (free):
+1. Go to: https://uptimerobot.com
+2. Add monitor for: https://your-app.onrender.com/api/v1/config/table
+3. Set interval: 5 minutes
+
+========================================
+
